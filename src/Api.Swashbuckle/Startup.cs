@@ -48,13 +48,13 @@ namespace Api.Swashbuckle
             app.UseSwagger();
 
             // Swagger UI
-            app.UseSwaggerUI(c =>
+            app.UseSwaggerUI(options =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                c.RoutePrefix = string.Empty;
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                options.RoutePrefix = string.Empty;
 
-                c.OAuthClientId("demo_api_swagger");
-                c.OAuthAppName("Demo API - Swagger"); // presentation purposes only
+                options.OAuthClientId("demo_api_swagger");
+                options.OAuthAppName("Demo API - Swagger"); // presentation purposes only
             });
 
             app.UseMvc();
@@ -65,7 +65,6 @@ namespace Api.Swashbuckle
     {
         public void Apply(Operation operation, OperationFilterContext context)
         {
-            // Check for authorize attribute
             var hasAuthorize = context.ControllerActionDescriptor.GetControllerAndActionAttributes(true).OfType<AuthorizeAttribute>().Any();
 
             if (hasAuthorize)
@@ -75,10 +74,7 @@ namespace Api.Swashbuckle
 
                 operation.Security = new List<IDictionary<string, IEnumerable<string>>>
                 {
-                    new Dictionary<string, IEnumerable<string>>
-                    {
-                        {"oauth2", new[] {"demo_api"}}
-                    }
+                    new Dictionary<string, IEnumerable<string>> {{"oauth2", new[] {"demo_api"}}}
                 };
             }
         }
