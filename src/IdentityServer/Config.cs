@@ -32,7 +32,11 @@ namespace IdentityServer
                     ClientName = "Swagger UI for demo_api",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-                    RedirectUris = {"http://localhost:5001/oauth2-redirect.html"},
+                    RedirectUris =
+                    {
+                        "http://localhost:5001/oauth2-redirect.html",
+                        "http://localhost:5001/o2c.html"
+                    },
                     AllowedScopes = { "demo_api" }
                 }
             };

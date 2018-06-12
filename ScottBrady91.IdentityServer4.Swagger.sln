@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3C1315E8-12E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{A24B3C7C-DF14-4DE1-BCCF-32AB949B030F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Swashbuckle", "src\Api.Swashbuckle\Api.Swashbuckle.csproj", "{9427C0B0-BBD0-4F94-BE17-1869CE5B5510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Swashbuckle", "src\Api.Swashbuckle\Api.Swashbuckle.csproj", "{9427C0B0-BBD0-4F94-BE17-1869CE5B5510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.NSwag", "src\Api.NSwag\Api.NSwag.csproj", "{1D58E147-51DE-4253-85C6-BB931CEC3EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{9427C0B0-BBD0-4F94-BE17-1869CE5B5510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9427C0B0-BBD0-4F94-BE17-1869CE5B5510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9427C0B0-BBD0-4F94-BE17-1869CE5B5510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D58E147-51DE-4253-85C6-BB931CEC3EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D58E147-51DE-4253-85C6-BB931CEC3EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D58E147-51DE-4253-85C6-BB931CEC3EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D58E147-51DE-4253-85C6-BB931CEC3EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A24B3C7C-DF14-4DE1-BCCF-32AB949B030F} = {3C1315E8-12EC-41B4-A357-5CF78C1B2F82}
 		{9427C0B0-BBD0-4F94-BE17-1869CE5B5510} = {3C1315E8-12EC-41B4-A357-5CF78C1B2F82}
+		{1D58E147-51DE-4253-85C6-BB931CEC3EB1} = {3C1315E8-12EC-41B4-A357-5CF78C1B2F82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {065CC90E-A826-4202-8121-137D5DAFCE6F}

@@ -31,7 +31,7 @@ namespace Api.Swashbuckle
                 {
                     Flow = "implicit", // just get token via browser (suitable for swagger SPA)
                     AuthorizationUrl = "http://localhost:5000/connect/authorize",
-                    Scopes = new Dictionary<string, string> { { "demo_api", "Demo API - full access" } }
+                    Scopes = new Dictionary<string, string> {{"demo_api", "Demo API - full access"}}
                 });
 
                 options.OperationFilter<AuthorizeCheckOperationFilter>(); // Required to use access token
