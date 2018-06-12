@@ -2,7 +2,6 @@
 using System.Reflection;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using NJsonSchema;
 using NSwag;
@@ -36,16 +35,9 @@ namespace Api.NSwag
 
             app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, settings =>
             {
+                settings.GeneratorSettings.DefaultPropertyNameHandling = PropertyNameHandling.CamelCase;
                 settings.SwaggerUiRoute = "";
 
-                settings.GeneratorSettings.DefaultPropertyNameHandling = PropertyNameHandling.CamelCase;
-
-                settings.OAuth2Client = new OAuth2ClientSettings
-                {
-                    ClientId = "demo_api_swagger",
-                    AppName = "Demo API - Swagger"
-                };
-                
                 settings.GeneratorSettings.DocumentProcessors.Add(new SecurityDefinitionAppender("oauth2", new SwaggerSecurityScheme
                 {
                     Type = SwaggerSecuritySchemeType.OAuth2,
@@ -55,6 +47,12 @@ namespace Api.NSwag
                 }));
 
                 settings.GeneratorSettings.OperationProcessors.Add(new OperationSecurityScopeProcessor("oauth2"));
+                
+                settings.OAuth2Client = new OAuth2ClientSettings
+                {
+                    ClientId = "demo_api_swagger",
+                    AppName = "Demo API - Swagger"
+                };
             });
 
             app.UseMvc();
